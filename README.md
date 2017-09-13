@@ -15,7 +15,7 @@ Register the provider by adding the below lines to config/app.php under provider
  RoySailor\Restify\RestifyServiceProvider::class
 ```
 
-## Generate RestModel
+## Generate Rest Model
 
 Run the below command to generate the Rest Model
 
@@ -108,27 +108,32 @@ class CarsController extends Controller
 ## Recognized URL Pattern
 
 ### Limit fields
-
+```
 http://cars.com/cars?fields=id,make,model,version,status,car_class,price
+```
 
 ### Filter
-
+```
 http://cars.com/cars?make=Chevrolet,status=Production
+```
 
 ### Sort
-
+```
 http://cars.com/cars?sort=price,-make
+```
 
 ### Search
-
+```
 http://cars.com/cars?q=Chev
+```
 
 ### Paginate
-
+```
 http://cars.com/cars?page=2&per_page=20
+```
 
 ### Embed
-
+```
 http://cars.com/cars?embed=reviews
-
+```
 Embed is under development right now.
