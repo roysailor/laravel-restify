@@ -3,6 +3,7 @@
 namespace RoySailor\Restify;
 
 use Illuminate\Support\Facades\DB;
+use RoySailor\Restify\Exceptions\NoLegalFieldFoundException;
 
 abstract class QueryBuilder
 {
@@ -58,11 +59,21 @@ abstract class QueryBuilder
 
         if('*' == $fields){
 
-            $this->tableHandle->select(DB::raw(implode(',', $this->fields)));
+            if(count($this->fields) > 0){
+
+                $this->tableHandle->select(DB::raw(implode(',', $this->fields)));
+
+            }
 
         } else{
 
             $fields = array_intersect($fields, $this->fields);
+
+            if(0 == count($fields)){
+
+                throw new NoLegalFieldFoundException();
+
+            }
 
             $fieldString = implode(',', $fields);
 
