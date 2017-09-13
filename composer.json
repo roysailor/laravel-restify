@@ -1,24 +1,25 @@
 {
-    "name": "buonzz/composer-library-template",
-    "description": "Boilerplate package for creating other packages.",
-    "keywords": ["template", "composer", "package"],
-    "license": "DBAD",
+    "name": "roysailor/laravel-restify",
+    "description": "Library to automate Restful GET endpoints",
+    "keywords": ["laravel", "rest", "rest api"],
+    "license": "MIT",
     "authors": [
         {
-            "name": "Darwin Biler",
-            "email": "buonzz@gmail.com"
+            "name": "Vikas Roy",
+            "email": "vikas.a.roy@gmail.com"
         }
     ],
-    "type": "project",
+    "type": "library",
     "require": {
-		"php": ">=5.4"
+		"php": ">=5.4",
+        "laravel/framework": "5.3.*|5.4.*|5.5.*"
     },
 	"require-dev": {
 		"phpunit/phpunit": "5.2.*"
     },
 	"autoload": {
         "psr-4": {
-            "Buonzz\\Template\\": "src/"
+            "RoySailor\\Restify\\": "src/"
         }
     }
 }
