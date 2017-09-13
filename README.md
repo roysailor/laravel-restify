@@ -3,7 +3,7 @@ Laravel Restify
 
 Automate Restful GET endpoints.
 
-##Install
+## Install
 
 ```
 composer require roysailor/laravel-restify
